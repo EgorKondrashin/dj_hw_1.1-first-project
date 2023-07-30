@@ -60,12 +60,13 @@ jobs:
           DB_HOST: ${{ env.DB_HOST }}
           DB_PORT: ${{ env.DB_PORT }}
 
-#      - name: Деплой
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: ${{ secrets.HOST_NAME }}
-#          username: ${{ secrets.HOST_USER }}
-#          password: ${{ secrets.HOST_PASSWORD }}
+      - name: Деплой
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_NAME }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_PASSWORD }}
+          script: expect /home/egor/dj_hw_1.1-first-project/3.2-crud/stocks_products/deploy.exp
 #          script: |
 #            cd/home/egor/dj_hw_1.1-first-project/3.2-crud/stocks_products
 #            git pull origin video
